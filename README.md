@@ -228,7 +228,7 @@ The repository currently contains a README, but it has been rewritten here to mo
 
 For site inquiries, the footer lists:
 
-- `solutionsswiftcare@gmail.com`
+- `hello@swiftcaresolution.net`
 - `+92 309 4163143`
 
 ---
