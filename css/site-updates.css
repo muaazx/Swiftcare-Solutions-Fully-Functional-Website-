@@ -6,8 +6,21 @@ img {
 
 .nav-section-logo img {
     width: auto;
-    max-width: 220px;
+    height: 58px;
+    max-width: 240px;
     object-fit: contain;
+}
+
+.nav-section-mobile-top .nav-section-logo img {
+    height: 48px;
+    max-width: 190px;
+}
+
+@media (max-width: 600px) {
+    .nav-section-logo img {
+        height: 48px;
+        max-width: 190px;
+    }
 }
 
 .hero-btn-primary,
