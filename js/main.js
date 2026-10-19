@@ -84,7 +84,10 @@ const heroNext = document.getElementById("next");
 let heroIndex = 0;
 
 function showHeroSlide(i) {
-    slides.forEach(s => s.classList.remove("active"));
+    slides.forEach(s => {
+        s.classList.remove("active");
+        s.querySelector("video")?.pause();
+    });
     dots.forEach(d => d.classList.remove("active"));
 
     heroIndex = (i + slides.length) % slides.length;
@@ -95,6 +98,12 @@ function showHeroSlide(i) {
 
     // Ensure video is playing
     const video = activeSlide.querySelector("video");
+    const source = video?.querySelector("source[data-src]");
+    if (source) {
+        source.src = source.dataset.src;
+        source.removeAttribute("data-src");
+        video.load();
+    }
     if (video && video.paused) {
         video.play().catch(e => console.log("Autoplay check:", e));
     }
@@ -256,10 +265,10 @@ const startCounting = () => {
 
             if (count < target) {
                 count += increment;
-                counter.innerText = Math.floor(count).toLocaleString() + "+";
+                counter.innerText = Math.floor(count).toLocaleString() + (counter.dataset.suffix ?? "+");
                 requestAnimationFrame(update);
             } else {
-                counter.innerText = target.toLocaleString() + "+";
+                counter.innerText = target.toLocaleString() + (counter.dataset.suffix ?? "+");
             }
         };
 

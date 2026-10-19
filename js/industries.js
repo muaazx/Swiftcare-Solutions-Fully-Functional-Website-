@@ -337,7 +337,7 @@ const industryS2StartCounter = (counter) => {
     counter.innerText = Math.ceil(industryS2Count);
     requestAnimationFrame(industryS2Update);
         } else {
-        counter.innerText = industryS2Target;
+        counter.innerText = industryS2Target + (counter.dataset.suffix || "");
         }
     };
 

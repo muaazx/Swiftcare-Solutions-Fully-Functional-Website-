@@ -16,7 +16,7 @@ const counterObserver = new IntersectionObserver((entries) => {
                         el.innerText = Math.floor(count);
                         requestAnimationFrame(update);
                     } else {
-                        el.innerText = target + "+";
+                        el.innerText = target + (el.dataset.suffix ?? "+");
                     }
                 };
 

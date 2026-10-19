@@ -121,7 +121,7 @@ const startCounter = () => {
     counters.forEach(counter => {
         let update = () => {
             let target = +counter.getAttribute("data-target");
-            let count = +counter.innerText;
+            let count = parseFloat(counter.innerText) || 0;
 
             let increment = target / 100;
 
@@ -129,7 +129,7 @@ const startCounter = () => {
                 counter.innerText = Math.ceil(count + increment);
                 setTimeout(update, 20);
             } else {
-                counter.innerText = target;
+                counter.innerText = target + (counter.dataset.suffix || "");
             }
         };
 
