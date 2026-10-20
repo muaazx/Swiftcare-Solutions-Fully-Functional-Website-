@@ -93,6 +93,11 @@ img {
     overflow-wrap: anywhere;
 }
 
+.section-2-contact-list .contact-phone-grid a,
+.section-2-contact-list .contact-phone-grid a span {
+    color: #fff;
+}
+
 .section-2-contact-list a:hover,
 .footer-section123-text a:hover {
     text-decoration: underline;
